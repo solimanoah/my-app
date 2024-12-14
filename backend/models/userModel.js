@@ -6,6 +6,8 @@ exports.createUser = async (email, password) => {
         const query = 'INSERT INTO customer (email, password) VALUES ($1, $2) RETURNING *';
         const values = [email, password];
 
+        console.log('Executing query on:', query); // debug log
+
         const result = await db.query(query, values);
 
         return result.rows[0];

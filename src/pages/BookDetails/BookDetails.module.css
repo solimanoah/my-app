@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.backButton {
+    align-self: flex-start;
+    padding: 10px 15px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.imageContainer {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.bookImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+ 
+.details {
+    flex: 2;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.bothButtons {
+    display: flex;
+    width: 250px;
+    gap: 5px;
+}
+
+.buyNow, .addToBasket {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.buyNow {
+    width: 50%;
+    background-color: #234422;
+}
+
+.addToBasket {
+    width: 50%;
+    background-color: #271222;
+}
+
+.checkout {
+    width: 250px;
+    padding: 15px;
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}

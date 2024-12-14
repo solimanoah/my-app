@@ -1,0 +1,88 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.backButton {
+    align-self: flex-start;
+    padding: 10px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.subHeader {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.checkoutPage {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.billingSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.payNowButton {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.payNowButton:hover {
+    background-color: #0056b3;
+}
+
+.bookSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.bookCover {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.bookDetails {
+    text-align: center;
+}
+
+.bookDetails h4, p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.totalCost {
+    font-weight: bold;
+    margin-top: 20px;
+}

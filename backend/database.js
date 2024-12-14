@@ -11,8 +11,10 @@ const pool = new Pool({
 });
 
 // set correct schema
-pool.query('SET search_path TO book_ecommerce_schema')
-    .then(() => console.log('Schema set to book_ecommerce_schema'))
-    .catch((err) => console.error('Error setting schema:', err))
+pool.on('connect', (client) => {
+    client.query('SET search_path TO book_ecommerce_schema')
+        .then(() => console.log('Schema set for new connection'))
+        .catch((err) => console.error('Error setting schema for new connection:', err));
+});
 
 module.exports = pool;

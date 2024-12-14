@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 
 exports.signup = async (req, res) => {
     const { email, password } = req.body;
+    console.log('Request Body:', req.body); //debug log
 
     try {
         if (!email || !password) {
@@ -12,6 +13,7 @@ exports.signup = async (req, res) => {
 
         // check if user with email already exists; no duplicates
         const existingUser = await userModel.findByEmail(email);
+        console.log('Existing User:', existingUser); // debug log
         if (existingUser) {
             return res.status(400).json({ error: 'Email already in use' });
         }
@@ -20,6 +22,7 @@ exports.signup = async (req, res) => {
 
         // create new user to store in db
         const newUser = await userModel.createUser(email, hashedPassword);
+        console.log('New User Created:', newUser); // debug log
 
         return res.status(201).json({
             message: 'Account created successfully',
@@ -52,7 +55,7 @@ exports.login = async (req, res) => {
         }
 
         // jwt session token
-        const token = jwt.sign({ id: user.id, email: user.email }, proces.env.JWT_SECRET, {
+        const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, {
             expiresIn: '1hr',
         });
 

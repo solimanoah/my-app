@@ -1,0 +1,83 @@
+.booklist-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.filters {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.filters h3 {
+    margin-bottom: 10px;
+}
+
+.filters select,
+.filters input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    width: 80%;
+}
+
+.book-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+}
+
+.book-cover .book-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.book-info h4 {
+    margin: 10px 0;
+}
+
+.book-info p {
+    margin: 5px 0;
+}
+
+.emptyButton {
+    padding: 10px;
+    background-color: #ff0051;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.logoutButton {
+    padding: 10px;
+    background-color: #373636;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;   
+}
+
+.otherButtons {
+    display: flex;
+    flex-direction: column;
+}
