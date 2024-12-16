@@ -46,3 +46,18 @@ exports.verifyUser = async (email, password) => {
         throw new Error('Failed to verify user');
     }
 };
+
+exports.findById = async (id) => {
+    try {
+        const query = 'SELECT * FROM customer WHERE id = $1';
+        const values = [id];
+
+        const result = await db.query(query, values);
+
+        return result.rows[0]
+    } catch (error) {
+        console.error('Error finding user by id', error);
+        throw new Error('Failed to find user by id');
+    }
+    
+}

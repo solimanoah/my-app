@@ -130,7 +130,7 @@ const Checkout = ({books}) => {
                     />
                     <input
                         type="text"
-                        phone="phone"
+                        name="phone"
                         placeholder="Phone Number"
                         value={billingInfo.phone}
                         onChange={handleInputChange}

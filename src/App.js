@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -14,7 +14,7 @@ import ThankYouSingle from './pages/ThankYouSingle/ThankYouSingle';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
-
+  
   const booksArray = [
     {
       id: 1,
@@ -156,7 +156,7 @@ function App() {
         <Route path="/" element={<Signup />} />
 
         {/* Protected Routes */}
-        <Route path="/books" element={<ProtectedRoute><BookList books={booksArray}/></ProtectedRoute> } />
+        <Route path="/books" element={<ProtectedRoute><BookList books={booksArray} /></ProtectedRoute> } />
         <Route path="/books/:bookId" element={<ProtectedRoute><BookDetails books={booksArray} addToBasket={addToBasket} /></ProtectedRoute>} />
         <Route path="/checkout" element={<ProtectedRoute><Checkout books={booksArray} /></ProtectedRoute>} />
         <Route path="/thank-you" element={<ProtectedRoute><ThankYou /></ProtectedRoute>} />

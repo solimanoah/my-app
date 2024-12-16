@@ -60,6 +60,12 @@ const Login = () => {
                 <p className={styles.redirect}>
                     <Link to="/" className={styles["redirect-link"]}>Don't have an account?</Link>
                 </p>
+                <p className={styles.redirect}>
+                    <a href="http://localhost:5000/api/auth/google" className={styles["redirect-link"]}>Log in via Google</a>
+                </p>
+                <p className={styles.redirect}>
+                    <a href="http://localhost:5000/api/auth/facebook" className={styles["redirect-link"]}>Log in via Facebook</a>
+                </p>
             </form>
         </div>
     )

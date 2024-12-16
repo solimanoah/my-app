@@ -104,6 +104,12 @@ const Signup = () => {
                 <p className="redirect">
                     <Link to="/login" className="redirect-link">Already have an account?</Link>
                 </p>
+                <p className="redirect">
+                    <a href="http://localhost:5000/api/auth/google" className="redirect-link">Sign up via Google</a>
+                </p>
+                <p className="redirect">
+                    <a href="http://localhost:5000/api/auth/facebook" className="redirect-link">Sign up via Facebook</a>
+                </p>
             </form>
         </div>
     );

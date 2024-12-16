@@ -4,6 +4,8 @@ const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes');
 const basketRoutes = require('./routes/basketRoutes');
 const pool = require('./database');
+const passport = require('./passportConfig');
+const session = require('express-session');
 
 dotenv.config();
 
@@ -11,6 +13,16 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+    })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get('/', (req, res) => {
     res.send('Welcome to the Book Galore API')

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './BookList.module.css';
   
@@ -8,6 +8,29 @@ const BookList = ({books}) => {
     const [maxPrice, setMaxPrice] = useState(50);
     const [buttonState, setButtonState] = useState('Empty Basket');
     const navigate = useNavigate();
+
+    // retrieving and implementing tokens for third party auth
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+
+        if (token) {
+            try {
+                console.log("Token Retrieved from URL:", token);
+                localStorage.setItem('token', token);
+                navigate('/books', { replace: true });
+            } catch (error) {
+                console.error("Error handling token:", error);
+                navigate('/login');
+            } 
+        } else {
+            const storedToken = localStorage.getItem('token');
+            if (!storedToken) {
+                console.error("No token found, redirecting to /login");
+                navigate('/login');
+            }
+        }
+    }, [navigate]);
 
     // new array for filtered books
     const filteredBooks = books.filter((book) => {
